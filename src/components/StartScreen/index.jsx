@@ -1,7 +1,7 @@
 import "./style.css";
 function StartScreen({ handleClick }) {
   return (
-    <div className="wrapper">
+    <div className="app-container">
       <h1>Some Title</h1>
       <button class="start-button" onClick={handleClick}>
         Start your journey here!

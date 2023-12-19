@@ -39,3 +39,8 @@ function ExampleComponent() {
     </div>
   );
 }
+
+/**function functionname() {  This is a function */
+
+
+}
