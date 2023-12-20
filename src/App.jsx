@@ -6,6 +6,11 @@ function App() {
   const [count, setCount] = useState(0);
   const [start, setStart] = useState(false);
 
+  //Vad ska vi begära?
+  //Endpoints
+  //Kan vi hämta data till vår app för att testa?
+  //Vilka parametrar behöver dem?
+
   function handleClick() {
     setStart(true);
   }
@@ -14,6 +19,8 @@ function App() {
     console.log("Start", start);
     return <StartScreen handleClick={handleClick} />;
   }
+
+  
 
   return (
     <div className="wrapper">
