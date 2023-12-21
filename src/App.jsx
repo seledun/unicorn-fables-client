@@ -42,7 +42,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
   const unicornList = []
   const idList = []
   const unicorns = await listUnicorns()
-  
+
   for (let i in unicorns) {
       idList.push(unicorns[i].id)
   };
@@ -59,7 +59,6 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
   }
 
   console.log(unicornList)
-  document.getElementById("unicorn-list").innerHTML = unicornList.join("");
   return unicornList;
 }
 
