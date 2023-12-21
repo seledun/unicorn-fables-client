@@ -3,7 +3,7 @@ import StartScreen from "./components/StartScreen/index.jsx";
 import "./App.css";
 
 async function getFables() {
-    const response = await fetch('http://localhost:5000/0.0.1/fables')
+    const response = await fetch('http://127.0.0.1:5000/0.0.1/fables')
     .then(response => response.json());
 
     return response;
