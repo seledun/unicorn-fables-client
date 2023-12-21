@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StartScreen from "./components/StartScreen/index.jsx";
 import "./App.css";
 
+async function getFables() {
+    const response = await fetch('http://localhost:5000/0.0.1/fables')
+    .then(response => response.json());
+
+    return response;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
   const [start, setStart] = useState(false);
+  const [listElements, setListElements] = useState([]);
+
+  useEffect(() => {
+    getFables().then((data) => {
+      console.log(data);
+      setListElements(data);
+    });
+  }, [])  
 
   //Vad ska vi begära?
   //Endpoints
@@ -26,6 +40,14 @@ function App() {
     <div className="wrapper">
       <h1>Some Title</h1>
       <p>This is some text because I am too lazy to fetch lorem ipsum</p>
+      <ul>
+      { listElements.map((fable) => (
+          <li key={fable.id}>
+            <strong>{fable.name}</strong><br />
+            <strong>{fable.votes}</strong><br />
+          </li>
+        )) }
+      </ul>    
     </div>
   );
 }
