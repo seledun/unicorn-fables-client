@@ -1,5 +1,5 @@
 
-const baseURL = "http://unicorns.idioti.se/";   //"http://localhost:5000/"
+const baseURL = "http://localhost:5000/";   //"http://localhost:5000/"  //"http://unicorns.idioti.se/"
 
 
 
@@ -10,16 +10,17 @@ const baseURL = "http://unicorns.idioti.se/";   //"http://localhost:5000/"
 //Knapp slumpa en sparad fabel
 
 /* Funktion för att slumpa fram en sparad fabel */
-async function randomFableId(json_object) {
+async function randomFableId(json_object) {           //TODO: LÄGG TILL Get för att hämta alla fables först     
    
-    //Itirera json-objektet och skapa en array med alla fabel-id:n
+    //Itirerar json-objektet och skapar en array med alla fabel-id:n
     json_object.fables.map(listOfIds => fable.id);
 
-    // Generera ett slumpmässigt index
+    // Genererar ett slumpmässigt index
     const id = Math.floor(Math.random() * listOfIds.length);       
 
    return id;
 }
+
 
 
 
@@ -34,6 +35,32 @@ async function randomFableId(json_object) {
 
 // ENHÖRNINGAR
 
+
+async function fetchABunchOfUniqueRandomUnicorns(range) {   
+  const options = {
+    method: "GET",
+    headers: {
+      "Accept": "application/json"
+    }
+  };
+
+  const unicornList = []
+  const unicorns = listUnicorns();
+  unicorns.map(listOfIds => unicorns.id);
+
+  for (i = 0; i < range; i++) {
+    let randomId = Math.floor(Math.random() * listOfIds.length);
+
+    // Genererar ett slumpmässigt index
+  let id = listOfIds.get(randomId);
+  listOfIds.delete(randomId);
+  let unicorn = await fetch(baseURL + id, options)
+  unicornList.appendChild(unicorn);
+  }
+
+  return unicornList;
+}
+
 async function listUnicorns() {
     const options = {
       method: "GET",
@@ -43,16 +70,20 @@ async function listUnicorns() {
     };
     const response = await fetch(baseURL, options);
     const unicorns = await response.json();
-    const unicornList = document.querySelector("#unicorns");
-    unicornList.replaceChildren();
-    unicorns.forEach((unicorn) => {
+   //const unicornList = document.querySelector("#unicorns");  //TODO: Byt ut mot knappjävel
+   // unicornList.replaceChildren();
+
+    return unicorns;  //Returnerar en unicorn-lista som ska skickas i HTML
+
+   /*  unicorns.forEach((unicorn) => {
       let listItem = document.createElement("li");
       listItem.setAttribute("name", "unicorn_" + unicorn.id);
       listItem.setAttribute("value", unicorn.id);
       listItem.innerHTML = unicorn.name;
       listItem.addEventListener("click", fetchThenDisplayUnicorn);
       unicornList.appendChild(listItem);
-    });
+    }
+    );*/
   }
   
   async function fetchThenDisplayUnicorn(event) {
@@ -239,7 +270,6 @@ function showUpdateForm() {
 document.querySelector("#addUnicorn").addEventListener("click", showAddForm);
 document.querySelector("#updateUnicorn").addEventListener("click", showUpdateForm);
 document.querySelector("#postUnicorn").addEventListener("click", postUnicorn);
-document.querySelector("#putUnicorn").addEventListener("click", putUnicorn);
 /*
  * Slutligen döljer vi formulären
  */
