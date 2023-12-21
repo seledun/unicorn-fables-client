@@ -3,7 +3,7 @@ function StartScreen({ handleClick }) {
   return (
     <div className="app-container">
       <h1>Some Title</h1>
-      <button class="start-button" onClick={handleClick}>
+      <button className="start-button" onClick={handleClick}>
         Start your journey here!
       </button>
     </div>
