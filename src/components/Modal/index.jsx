@@ -1,23 +1,29 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-function Popup({handleClose, show}) {
+//Pop-up för enhörningsbeskrivning nedan
+function Popup({ handleClose, show, selectedUnicorn }) {
+  const { name, description, image } = selectedUnicorn;
 
   return (
     <>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Enhörning</Modal.Title>
+          <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, Du har hittat en enhörning! nice :)</Modal.Body>
+        <Modal.Body>
+          Description: {description}
+          <img src={image} style={{ maxWidth: 200, height: "auto" }} />
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button
+            variant="secondary"
+            onClick={(e) => {
+              console.log("I AM CLIQ");
+            }}
+          >
+            Generera fabel
           </Button>
         </Modal.Footer>
       </Modal>

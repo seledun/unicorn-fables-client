@@ -1,4 +1,3 @@
-import "./style.css";
 function StartScreen({ handleClick }) {
   return (
     <div className="app-container">

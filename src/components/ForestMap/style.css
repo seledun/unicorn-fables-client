@@ -1,0 +1,46 @@
+.unicorn-button-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+}
+
+.unicorn-button-container .btn-primary {
+  position: absolute;
+}
+
+.unicorn-button-container .btn-primary:nth-child(1) {
+  left: 56px;
+  top: 66px;
+}
+
+.unicorn-button-container .btn-primary:nth-child(2) {
+  position: absolute;
+  left: 304px;
+  top: 45px;
+  background-color: blue;
+}
+
+.unicorn-button-container .btn-primary:nth-child(3) {
+  left: 105px;
+  top: 105px;
+}
+
+.unicorn-button-container .btn-primary:nth-child(4) {
+  left: 108px;
+  top: 236px;
+}
+
+.unicorn-button-container .btn-primary:nth-child(5) {
+  left: 261px;
+  top: 169px;
+}
+
+.unicorn-button-container .btn-primary:nth-child(6) {
+  left: 22px;
+  top: 168px;
+}
+
+.unicorn-button-container .btn-primary:nth-child(7) {
+  left: 291px;
+  top: 95px;
+}
