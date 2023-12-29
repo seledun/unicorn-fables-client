@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import Popup from "./components/Modal/index.jsx";
 import StartScreen from "./components/StartScreen/index.jsx";
+import { Button } from "react-bootstrap";
 import "./App.css";
-import {Modal, Button } from 'react-bootstrap' //For pop-ups, t.ex
 //ToDO: GET alla enhörningar till framsidan (kartan) som klickbara objekt
 //Todo: GET specifik enhörning (när användaren klickat på en enhörning)
 //ToDO: Generera ny fabel, med sparfunktion (om användaren gillar den)
@@ -74,6 +75,10 @@ function App() {
   const [listElements, setListElements] = useState([]);
   const [individualFable, setIndividualFable] = useState([]);
   const [storyBoardActive, setStoryBoardActive] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 //GET för individuell fabel när man klickar i listan 
   async function getWholeFable(id) {
@@ -98,11 +103,7 @@ function App() {
 
   }, [])
 
-  //Vad ska vi begära?
-  //Endpoints
-  //Kan vi hämta data till vår app för att testa?
-  //Vilka parametrar behöver dem?
-
+  //Hanterar "start-screen" innan man kommer in till main app. 
   function handleClick() {
     setStart(true);
   }
@@ -132,8 +133,10 @@ function App() {
             <strong>{individualFable.text}</strong><br />
           </section>
       </ul>
-
-    
+      <Button variant="primary" onClick={handleShow} size="lg" style={{backgroundColor: "#244F26"}}>
+        Launch demo modal
+      </Button>
+      <Popup handleShow={handleShow} handleClose={handleClose} show={show}/>
     </div>
   );
 }
