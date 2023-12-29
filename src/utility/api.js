@@ -2,11 +2,13 @@ const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
 // Hämtar sparade fabler
 async function getFables() {
-  const response = await fetch("http://127.0.0.1:5000/0.0.1/fables").then(
-    (response) => response.json()
-  );
-
-  return response;
+  try {
+    const response = await fetch("http://127.0.0.1:5000/0.0.1/fables");
+    const fables = await response.json();
+    return fables;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 //Hämta och skapa en lista på alla enhörningar
