@@ -1,10 +1,17 @@
+import React from "react";
+import "./style.css"; // Relative path to the CSS file
+
 function StartScreen({ handleClick }) {
   return (
     <div className="app-container">
-      <h1>Some Title</h1>
-      <button className="start-button" onClick={handleClick}>
-        Start your journey here!
-      </button>
+      <div className="startscreen-blob">
+        <div className="fade-in-text">
+          <h1>Welcome to UnicornJourney!</h1>
+        </div>
+        <button className="start-button" onClick={handleClick}>
+          Start your journey here...<span class="arrow"></span>
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,57 @@
+@font-face {
+  font-family: arrow;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+}
+
+.start-button {
+  color: white;
+  background-color: rgb(12, 139, 12);
+  display: flex;
+}
+
+body,
+html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Set height to 100% of the viewport */
+}
+
+.app-container {
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 100vh; /* Set height to 100% of the viewport height */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */
+  /* Add background-color or other styles as needed */
+}
+
+.fade-in-text {
+  font-family: Arial;
+  font-size: 150px;
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.startscreen-blob {
+  /* If not already a flex container, make it one */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
+  height: 50%; /* Ensure the div takes up full height */
+  width: 50%;
+  background-image: url(old-scroll-picture.png);
+  box-shadow: 0 0 8px 8px white inset;
+}

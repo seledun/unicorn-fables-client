@@ -16,3 +16,19 @@
     width: 1000px;
   }
 }
+
+aside {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
+  width: 100%; /* Set width to 100% */
+  position: fixed; /* Position the navbar at the top */
+  top: 0; /* Position the navbar at the top */
+  background-color: #f4f4f4; /* Optional: Add background color */
+  z-index: 1000; /* Optional: Set z-index for stacking context */
+}
+
+aside button {
+  /* Additional button styles if needed */
+  margin: 10px; /* Optional: Add some spacing between buttons */
+}

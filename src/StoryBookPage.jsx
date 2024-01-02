@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getFables } from "./utility/api";
+import HTMLFlipBook from "react-pageflip";
 function StoryBookPage() {
   const [individualFable, setIndividualFable] = useState([]);
   const [allFables, setAllFables] = useState([]);
@@ -32,6 +33,38 @@ function StoryBookPage() {
           );
         })}
       </ul>
+      <HTMLFlipBook width={300} height={500}>
+        <div className="book-page">
+          <p>
+            Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page
+            1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1
+          </p>
+        </div>
+        <div className="book-page">
+          <p>
+            Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page
+            1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1
+          </p>
+        </div>
+        <div className="book-page">
+          <p>
+            Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page
+            1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1
+          </p>
+        </div>
+        <div className="book-page">
+          <p>
+            Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page
+            1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1
+          </p>
+        </div>
+        <div className="book-page">
+          <p>
+            Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page
+            1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1Page 1
+          </p>
+        </div>
+      </HTMLFlipBook>
     </>
   );
 }

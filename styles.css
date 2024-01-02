@@ -35,3 +35,8 @@ h1 {
 /*Please for the love of god do not touch this I will drop out*/
 main {
 }
+
+.book-page {
+  background-color: white;
+  padding: 2rem;
+}
