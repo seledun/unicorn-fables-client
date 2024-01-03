@@ -3,12 +3,6 @@
   src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 }
 
-.start-button {
-  color: white;
-  background-color: rgb(12, 139, 12);
-  display: flex;
-}
-
 body,
 html {
   margin: 0; /* Remove default margin */
@@ -27,6 +21,8 @@ html {
   justify-content: center; /* Center children vertically */
   align-items: center; /* Center children horizontally */
   /* Add background-color or other styles as needed */
+  background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
+  background-size: cover;
 }
 
 .fade-in-text {
@@ -50,8 +46,61 @@ html {
   flex-direction: column;
   justify-content: center; /* Center children horizontally */
   align-items: center; /* Center children vertically */
-  height: 50%; /* Ensure the div takes up full height */
-  width: 50%;
+  height: 70%; /* Ensure the div takes up full height */
+  width: 70%;
   background-image: url(old-scroll-picture.png);
-  box-shadow: 0 0 8px 8px white inset;
+  box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;
+}
+
+.start-button {
+  display: flex;
+  color: #ffffff;
+  background-color: #13452d;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  font-size: 14px;
+}
+
+.start-button > .arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #c2ffe9;
+  border-bottom: 2px solid #c2ffe9;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.start-button > .arrow::before {
+  display: block;
+  background-color: currentColor;
+  width: 3px;
+  transform-origin: bottom right;
+  height: 2px;
+  position: absolute;
+  opacity: 0;
+  bottom: calc(-2px / 2);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  content: "";
+  right: 0;
+}
+
+.start-button:hover > .arrow {
+  transform: rotate(-45deg) translate(4px, 4px);
+}
+
+.start-button:hover > .arrow::before {
+  opacity: 1;
+  width: 8px;
+}
+
+.start-button:hover {
+  background-color: #017a4f;
+  color: #fff;
 }

@@ -19,22 +19,22 @@
 .unicorn-button-container .btn-primary:nth-child(2) {
   position: absolute;
   left: 304px;
-  top: 45px;
+  top: 600px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(3) {
-  left: 105px;
-  top: 105px;
+  left: 422px;
+  top: 421px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(4) {
-  left: 108px;
-  top: 236px;
+  left: 178px;
+  top: 289px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(5) {
-  left: 261px;
-  top: 169px;
+  left: 1100px;
+  top: 477px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(6) {
@@ -43,6 +43,6 @@
 }
 
 .unicorn-button-container .btn-primary:nth-child(7) {
-  left: 291px;
-  top: 95px;
+  left: 1300px;
+  top: 262px;
 }

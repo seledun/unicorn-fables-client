@@ -9,7 +9,7 @@ function StartScreen({ handleClick }) {
           <h1>Welcome to UnicornJourney!</h1>
         </div>
         <button className="start-button" onClick={handleClick}>
-          Start your journey here...<span class="arrow"></span>
+          Start your journey here...<span className="arrow"></span>
         </button>
       </div>
     </div>
