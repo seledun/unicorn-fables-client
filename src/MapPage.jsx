@@ -11,7 +11,6 @@ import ForestMap from "./components/ForestMap";
 function MapPage({ randomUnicorns, setSelectedUnicorn, selectedUnicorn }) {
   return (
     <>
-      <h1>Some Title</h1>
       <ForestMap
         randomUnicorns={randomUnicorns}
         selectedUnicorn={selectedUnicorn}

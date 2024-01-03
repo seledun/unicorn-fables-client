@@ -1,14 +1,150 @@
 .unicorn-button-container {
   position: relative;
-  width: 150%;
-  min-height: 1000px;
   background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
   background-size: cover;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 100vh;
 }
 
 .unicorn-button-container .btn-primary {
   position: absolute;
   background-color: transparent;
+  --bs-btn-color: #ffffff00;
+  --bs-btn-bg: #0d6efd00;
+  --bs-btn-border-color: #0d6efd00;
+  --bs-btn-hover-color: #ffffff00;
+  --bs-btn-hover-bg: #0b5ed700;
+  --bs-btn-hover-border-color: #0a58ca00;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #ffffff00;
+  --bs-btn-active-bg: #0a57ca00;
+  --bs-btn-active-border-color: #0a52be00;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+  --bs-btn-disabled-color: #ffffff00;
+  --bs-btn-disabled-bg: #48515e00;
+  --bs-btn-disabled-border-color: #0d6dfd00;
+}
+
+svg#one {
+  position: absolute;
+  -webkit-transform: translate(50%, 141%);
+  transform: translate(50%, 141%);
+}
+svg#two {
+  position: absolute;
+  -webkit-transform: translate(570%, 1210%);
+  transform: translate(570%, 1210%);
+}
+svg#three {
+  position: absolute;
+  -webkit-transform: translate(600%, 250%);
+  transform: translate(600%, 250%);
+}
+.group {
+  -webkit-transform: translate(42.5px, 42.5px);
+  -moz-transform: translate(42.5px, 42.5px);
+  transform: translate(42.5px, 42.5px);
+}
+path {
+  -webkit-transform: translate(-42.5px, -42.5px);
+  -moz-transform: translate(-42.5px, -42.5px);
+  transform: translate(-42.5px, -42.5px);
+}
+.large {
+  animation: large 2.5s infinite;
+  animation: large 2.5s infinite;
+}
+.large-2 {
+  animation: large-2 2.5s infinite;
+  animation: large-2 2.5s infinite;
+}
+.small {
+  animation: small 2.5s infinite;
+  animation: small 2.5s infinite;
+}
+@keyframes large {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(360deg) scale(1.5);
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+@keyframes large {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+@keyframes large-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(405deg) scale(1.1);
+    transform: rotate(405deg) scale(1.1);
+  }
+}
+@keyframes large-2 {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(405deg) scale(1.1);
+  }
+}
+@keyframes small {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(-360deg) scale(1);
+    transform: rotate(-360deg) scale(1.5);
+  }
+}
+@keyframes small {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg) scale(1.5);
+  }
 }
 
 .unicorn-button-container .btn-primary:nth-child(1) {
@@ -18,8 +154,8 @@
 
 .unicorn-button-container .btn-primary:nth-child(2) {
   position: absolute;
-  left: 304px;
-  top: 600px;
+  left: 100px;
+  top: 496px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(3) {
@@ -33,8 +169,8 @@
 }
 
 .unicorn-button-container .btn-primary:nth-child(5) {
-  left: 1100px;
-  top: 477px;
+  left: 554px;
+  top: 64px;
 }
 
 .unicorn-button-container .btn-primary:nth-child(6) {
@@ -43,6 +179,6 @@
 }
 
 .unicorn-button-container .btn-primary:nth-child(7) {
-  left: 1300px;
+  left: 576px;
   top: 262px;
 }

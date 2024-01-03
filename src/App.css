@@ -24,7 +24,7 @@ aside {
   width: 100%; /* Set width to 100% */
   position: fixed; /* Position the navbar at the top */
   top: 0; /* Position the navbar at the top */
-  background-color: rgb(207, 187, 154); /* Optional: Add background color */
+  background-color: rgb(0 0 0 / 56%); /* Optional: Add background color */
   z-index: 1000; /* Optional: Set z-index for stacking context */
   height: 8%;
 }
