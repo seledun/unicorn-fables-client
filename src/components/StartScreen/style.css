@@ -46,8 +46,8 @@ html {
   flex-direction: column;
   justify-content: center; /* Center children horizontally */
   align-items: center; /* Center children vertically */
-  height: 70%; /* Ensure the div takes up full height */
-  width: 70%;
+  height: 55%; /* Ensure the div takes up full height */
+  width: 55%;
   background-image: url(old-scroll-picture.png);
   box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;
 }

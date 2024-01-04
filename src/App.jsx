@@ -4,6 +4,7 @@ import { getFables, fetchABunchOfUniqueRandomUnicorns } from "./utility/api.js";
 import "./App.css";
 import MapPage from "./MapPage.jsx";
 import StoryBookPage from "./StoryBookPage.jsx";
+import React from "react";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -13,7 +14,6 @@ function App() {
 
   useEffect(() => {
     fetchABunchOfUniqueRandomUnicorns(7).then((unicorns) => {
-      console.log("what the fuckkkkkkkkkkkk");
       setRandomUnicorns(unicorns);
     });
   }, []);
@@ -55,5 +55,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

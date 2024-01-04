@@ -1,0 +1,37 @@
+body,
+html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Set height to 100% of the viewport */
+}
+
+.wrapper {
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 100vh; /* Set height to 100% of the viewport height */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */
+  /* Add background-color or other styles as needed */
+  background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+.fable-list-container {
+  width: 70%;
+  height: 70%;
+  background-image: url(/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png);
+}
+
+.fable-list-container > ul {
+  float: left;
+  padding-left: 10%;
+  padding-top: 10%;
+}
