@@ -25,9 +25,17 @@ ul {
 }
 
 .fable-list-container {
-  width: 70%;
-  height: 70%;
-  background-image: url(/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png);
+  width: 65%;
+  height: 65%;
+  background-image: url(/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/fable-background.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
 }
 
 .fable-list-container > ul {

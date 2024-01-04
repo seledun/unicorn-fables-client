@@ -26,6 +26,7 @@ function StoryBookPage() {
     <>
       <div className="wrapper">
         <div className="fable-list-container">
+          <h1>Fabelregister</h1>
           <ul>
             {allFables.map((fable) => {
               return (
