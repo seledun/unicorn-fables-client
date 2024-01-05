@@ -82,6 +82,7 @@ function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
         handleClose={handleClose}
         show={show}
         selectedUnicorn={selectedUnicorn}
+        storyParameters={bgImage}
       />
     </>
   );
