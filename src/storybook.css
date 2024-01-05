@@ -1,21 +1,20 @@
 body,
 html {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  height: 100%; /* Set height to 100% of the viewport */
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .wrapper {
-  position: fixed; /* Fixed positioning */
-  top: 0; /* Stick to the top */
-  left: 0; /* Stick to the left */
-  width: 100vw; /* Set width to 100% of the viewport width */
-  height: 100vh; /* Set height to 100% of the viewport height */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */
-  /* Add background-color or other styles as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
   background-size: cover;
 }
@@ -25,21 +24,43 @@ ul {
 }
 
 .fable-list-container {
-  width: 65%;
-  height: 65%;
+  width: 75%;
+  height: 75%;
   background-image: url(/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/fable-background.jpg);
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;
+  display: flex;
+  flex-direction: column; /* Added to stack children vertically */
+  align-items: flex-start; /* Align children to the left */
 }
 
 h1 {
   text-align: center;
   padding-top: 20px;
+  padding-left: 50px;
+  font-size: small;
 }
 
+.selected-fable-name {
+  font-size: x-large;
+  text-decoration: underline;
+}
 .fable-list-container > ul {
-  float: left;
   padding-left: 10%;
   padding-top: 10%;
+}
+
+.fable-text {
+  text-align: left; /* Align text to the left side */
+  width: 100%; /* Take the full width of the container */
+  white-space: normal; /* Allow text to wrap onto the next line */
+  font-size: small;
+  padding-left: 50px;
+  animation: forwards;
+}
+
+section {
+  max-width: 50%;
+  padding-top: 1%;
 }

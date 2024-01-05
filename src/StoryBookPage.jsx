@@ -5,6 +5,10 @@ import "./storybook.css"; // Relative path to the CSS file
 function StoryBookPage() {
   const [individualFable, setIndividualFable] = useState([]);
   const [allFables, setAllFables] = useState([]);
+
+  const [fableSelected, setFableSelected] = useState(false);
+  const [selectedFable, setSelectedFable] = useState([]);
+
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
   useEffect(() => {
@@ -22,8 +26,12 @@ function StoryBookPage() {
     let response = await fetch(baseURL + "fables/" + id, options);
     const fabel = await response.json();
 
+    if (response.status == 200) {
+      setSelectedFable(fabel);
+      setFableSelected(true);
+    }
+
     console.log(fabel);
-    return fabel;
   }
 
   console.log("ALL", allFables);
@@ -31,18 +39,29 @@ function StoryBookPage() {
     <>
       <div className="wrapper">
         <div className="fable-list-container">
-          <h1>Fabelregister</h1>
-          <ul>
-            {allFables.map((fable) => {
-              return (
-                <li>
-                  <button onClick={() => getWholeFable(fable.id)}>
-                    <h3>{fable.name}</h3>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          {fableSelected ? (
+            <>
+              <h1 className="selected-fable-name">{selectedFable.name}</h1>
+              <div className="fable-text">
+                <section>{selectedFable.text}</section>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1>Fabelregister</h1>
+              <ul>
+                {allFables.map((fable) => {
+                  return (
+                    <li key={fable.id}>
+                      <button onClick={() => getWholeFable(fable.id)}>
+                        <h3>{fable.name}</h3>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </>
