@@ -182,3 +182,26 @@ path {
   left: 576px;
   top: 262px;
 }
+
+.switch-button {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 9999; /* Make sure it's on top */
+  transition: background-color 0.3s ease;
+}
+
+.switch-button:hover {
+  background-color: #555;
+}
+
+/* Style for night mode (active state) */
+.switch-button.active {
+  background-color: #111;
+}

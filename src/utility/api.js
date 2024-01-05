@@ -3,7 +3,7 @@ const baseURL = "http://127.0.0.1:5000/0.0.1/";
 // Hämtar sparade fabler
 async function getFables() {
   try {
-    const response = await fetch("http://127.0.0.1:5000/0.0.1/fables");
+    const response = await fetch(baseURL + "fables");
     const fables = await response.json();
     return fables;
   } catch (error) {
@@ -21,8 +21,6 @@ async function listUnicorns() {
   };
   const response = await fetch(baseURL + "unicorns", options);
   const unicorns = JSON.parse(await response.json());
-
-  // document.getElementById("unicorn-list").innerHTML = unicorns.map(unicorn => <li>${unicorn.id}</li>).join("");
 
   return unicorns;
 }

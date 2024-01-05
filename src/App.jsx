@@ -26,10 +26,6 @@ function App() {
   if (!start) {
     return (
       <div className="wrapper">
-        <aside>
-          <button onClick={() => setCurrentPage("map")}>Hem</button>
-          <button onClick={() => setCurrentPage("storybook")}>Storybook</button>
-        </aside>
         <StartScreen handleClick={handleClick} />
       </div>
     );
@@ -55,4 +51,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

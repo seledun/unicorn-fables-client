@@ -1,0 +1,26 @@
+.popup-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1; /* Take up remaining space */
+  padding-right: 20px; /* Space between text and image */
+}
+
+.img {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: flex-end; /* Align image to the right */
+  align-items: center; /* Center image vertically */
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+}
+
+.custom-modal {
+  background-image: url("/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png");
+  background-size: cover;
+}
