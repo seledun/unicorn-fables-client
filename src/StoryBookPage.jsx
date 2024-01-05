@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getFables } from "./utility/api";
+import { fetchBestFables } from "./utility/api";
 import "./storybook.css"; // Relative path to the CSS file
 
 function StoryBookPage() {
@@ -12,7 +12,7 @@ function StoryBookPage() {
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
   useEffect(() => {
-    getFables().then((data) => {
+    fetchBestFables(4).then((data) => {
       console.log("Got some datur", data);
       setAllFables(data);
     });
