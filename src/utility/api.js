@@ -27,7 +27,6 @@ async function listUnicorns() {
 
 //Hämtar N slumpade enhörningar
 async function fetchABunchOfUniqueRandomUnicorns(range) {
-
   console.log("Fetching " + range + " unicorns");
 
   const options = {
@@ -45,10 +44,10 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     idList.push(unicorns[i].id);
   }
 
-  console.log(idList.length)
+  console.log(idList.length);
 
   for (let i = 0; i < range; i++) {
-    if(idList.length == 0) {
+    if (idList.length == 0) {
       console.log("No more unicorns to fetch");
       break;
     }
@@ -66,7 +65,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
       continue;
     }
 
-    console.log(unicorn)
+    console.log(unicorn);
     unicornList.push(unicorn);
   }
 
@@ -165,13 +164,13 @@ async function getWholeFable(id) {
 }
 
 async function getNextFable(id) {
-  const fabels = await getFables();
-  let nextFable = fabels[0];
+  const fables = await getFables();
+  let nextFable = fables[0];
 
-  for (let i = 0; i < fabels.length; i++) {
-    console.log(fables[i].uuid);
-    if (fabels[i].uuid == id) {
-      nextFable = fabels[i + 1];
+  for (let i = 0; i < fables.length; i++) {
+    if (fables[i].id == id) {
+      console.log("Found yay");
+      nextFable = fables[i + 1];
       break;
     }
   }
