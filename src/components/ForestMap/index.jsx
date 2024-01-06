@@ -3,7 +3,19 @@ import Popup from "../Modal";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
-function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
+function ForestMap({
+  randomUnicorns,
+  selectedUnicorn,
+  setSelectedUnicorn,
+  setCurrentPage,
+  setSelectedFable,
+}) {
+  console.log("Forest Map");
+  console.log(setSelectedFable);
+
+  console.log("Current Page");
+  console.log(setCurrentPage);
+
   const [show, setShow] = useState(false);
   const [bgImage, setBgImage] = useState(1); // State to track background image
 
@@ -83,6 +95,8 @@ function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
         show={show}
         selectedUnicorn={selectedUnicorn}
         storyParameters={bgImage}
+        setCurrentPage={setCurrentPage}
+        setSelectedFable={setSelectedFable}
       />
     </>
   );

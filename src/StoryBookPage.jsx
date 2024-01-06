@@ -2,14 +2,19 @@ import { useState, useEffect } from "react";
 import { fetchBestFables } from "./utility/api";
 import "./storybook.css"; // Relative path to the CSS file
 
-function StoryBookPage() {
+function StoryBookPage({ selectedFableId, setSelectedFableId }) {
+  const baseURL = "http://127.0.0.1:5000/0.0.1/";
+
   const [individualFable, setIndividualFable] = useState([]);
   const [allFables, setAllFables] = useState([]);
 
   const [fableSelected, setFableSelected] = useState(false);
   const [selectedFable, setSelectedFable] = useState([]);
 
-  const baseURL = "http://127.0.0.1:5000/0.0.1/";
+  if (selectedFableId !== -1 && !fableSelected) {
+    getWholeFable(selectedFableId);
+    setSelectedFableId(-1);
+  }
 
   useEffect(() => {
     fetchBestFables(4).then((data) => {
@@ -17,6 +22,7 @@ function StoryBookPage() {
       setAllFables(data);
     });
   }, []);
+
   //GET för individuell fabel när man klickar i listan
   async function getWholeFable(id) {
     const options = {

@@ -3,10 +3,50 @@ import Modal from "react-bootstrap/Modal";
 import { generateFable } from "../../utility/api.js";
 import "./style.css";
 
-function Popup({ handleClose, show, selectedUnicorn, storyParameters }) {
+function Popup({
+  handleClose,
+  show,
+  selectedUnicorn,
+  storyParameters,
+  setCurrentPage,
+  setSelectedFable,
+}) {
   const { name, description, image, id } = selectedUnicorn;
   const { bgImage } = storyParameters;
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
+
+  console.log(setSelectedFable);
+  console.log(setCurrentPage);
+
+  //Generar en ny fabel
+  async function generateFable() {
+    let mood = "";
+    if (bgImage == 1) {
+      mood = "happy";
+    } else {
+      mood = "night";
+    }
+
+    const options = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+        mood: mood,
+      }),
+    };
+
+    const response = await fetch(baseURL + "fables", options);
+    const fabel = await response.json();
+
+    setCurrentPage("storybook");
+    setSelectedFable(fabel.uuid);
+
+    return fabel;
+  }
 
   return (
     <>
@@ -28,7 +68,10 @@ function Popup({ handleClose, show, selectedUnicorn, storyParameters }) {
           <Modal.Footer>
             <div className="footer-content">
               {" "}
-              <Button variant="generate" onClick={(e) => generateFable(bgImage, id)}>
+              <Button
+                variant="generate"
+                onClick={(e) => generateFable(bgImage, id)}
+              >
                 Generera fabel
               </Button>
             </div>
