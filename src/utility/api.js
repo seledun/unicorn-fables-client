@@ -43,12 +43,19 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
   }
 
   for (let i = 0; i < range; i++) {
-    let randomId = Math.floor(Math.random() * idList.length);
+    if(idList.length == 0) {break;}
 
+    let randomId = Math.floor(Math.random() * idList.length);
     // Genererar ett slumpmässigt index
     let id = idList[randomId];
     idList.splice(randomId, 1);
     let response = await fetch(baseURL + "unicorns/" + id, options);
+
+    if (response.get('description') <= 40) {
+      range--;
+      continue;
+    }
+
     let unicorn = await response.json();
     unicornList.push(unicorn);
   }
@@ -132,7 +139,6 @@ function sortFablesByRank(fables) {
     let temp = sortedArray[i];
     sortedArray[i] = fables[highestVotedFableIndex];
     sortedArray[highestVotedFableIndex] = temp;
-    console.log(sortedArray[i]);
   }
   return sortedArray;
 }
