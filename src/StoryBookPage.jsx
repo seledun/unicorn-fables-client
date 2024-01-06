@@ -65,13 +65,8 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
           ) : (
             <>
               <div className="list-container">
-<<<<<<< Updated upstream
                 <ol>
                   <h1>Fabelregister</h1>
-=======
-                <h1>Fabelregister</h1>
-                <ul>
->>>>>>> Stashed changes
                   {allFables.map((fable) => {
                     return (
                       <li key={fable.id}>
@@ -81,11 +76,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
                       </li>
                     );
                   })}
-<<<<<<< Updated upstream
                 </ol>
-=======
-                </ul>
->>>>>>> Stashed changes
               </div>
             </>
           )}
