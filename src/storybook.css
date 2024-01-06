@@ -12,15 +12,21 @@ html {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
   background-size: cover;
 }
+.fable-list-container button {
+  background-color: transparent;
+  border: none;
+  border: 1px solid black;
+}
 
-ul {
-  list-style: none;
+ol {
+  background-color: none;
+  float: left;
+  font-family: cursive;
 }
 
 .fable-list-container {
@@ -36,19 +42,29 @@ ul {
 }
 
 h1 {
-  text-align: center;
   padding-top: 20px;
   padding-left: 50px;
   font-size: small;
+  padding-bottom: 1px;
+  font-family: cursive;
 }
 
 .selected-fable-name {
   font-size: x-large;
   text-decoration: underline;
+  color: rgb(10, 64, 26);
 }
 .fable-list-container > ul {
   padding-left: 10%;
   padding-top: 10%;
+}
+.fable-list-container h3 {
+  font-size: large;
+  text-decoration: none;
+}
+
+li {
+  padding: 1%;
 }
 
 .fable-text {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchBestFables } from "./utility/api";
+import { fetchBestFables, getNextFable } from "./utility/api";
 import "./storybook.css"; // Relative path to the CSS file
 
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
@@ -17,7 +17,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   }
 
   useEffect(() => {
-    fetchBestFables(4).then((data) => {
+    fetchBestFables(10).then((data) => {
       console.log("Got some datur", data);
       setAllFables(data);
     });
@@ -50,22 +50,32 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
               <h1 className="selected-fable-name">{selectedFable.name}</h1>
               <div className="fable-text">
                 <section>{selectedFable.text}</section>
+                <button
+                  onClick={() => getNextFable(selectedFable.id)}
+                  className="next-button"
+                >
+                  Nästa
+                </button>
+
+                <button className="vote-button">Rösta</button>
               </div>
             </>
           ) : (
             <>
-              <h1>Fabelregister</h1>
-              <ul>
-                {allFables.map((fable) => {
-                  return (
-                    <li key={fable.id}>
-                      <button onClick={() => getWholeFable(fable.id)}>
-                        <h3>{fable.name}</h3>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+              <div className="list-container">
+                <ol>
+                  <h1>Fabelregister</h1>
+                  {allFables.map((fable) => {
+                    return (
+                      <li key={fable.id}>
+                        <button onClick={() => getWholeFable(fable.id)}>
+                          <h3>{fable.name}</h3>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
             </>
           )}
         </div>

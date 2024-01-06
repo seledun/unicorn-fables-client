@@ -58,7 +58,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
 
 //Rankar upp en fable
 async function upvote(id) {
-  const options  = {
+  const options = {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -109,7 +109,7 @@ async function fetchBestFables(range) {
   const sortedFables = sortFablesByRank(fables); //Sort
 
   for (let i = 0; i < range; i++) {
-    if(i >= sortedFables.length) {
+    if (i >= sortedFables.length) {
       break;
     }
     fableList.push(sortedFables[i]);
@@ -123,7 +123,7 @@ function sortFablesByRank(fables) {
   for (let i = 0; i < sortedArray.length; i++) {
     let highestVotedFableIndex = i;
     let highestFableVote = sortedArray[i].votes;
-    for(let j = i+1; j < sortedArray.length; j++) {
+    for (let j = i + 1; j < sortedArray.length; j++) {
       if (sortedArray[j].votes > highestFableVote) {
         highestVotedFableIndex = j;
         highestFableVote = sortedArray[j].votes;
@@ -148,4 +148,26 @@ async function getWholeFable(id) {
   return fabel;
 }
 
-export { fetchABunchOfUniqueRandomUnicorns, fetchBestFables, upvote, getWholeFable, getFables, generateFable };
+async function getNextFable(id) {
+  const fabels = await getFables();
+  let nextFable = fabels[0];
+
+  for (let i = 0; i < fabels.length; i++) {
+    console.log(fables[i].uuid);
+    if (fabels[i].uuid == id) {
+      nextFable = fabels[i + 1];
+      break;
+    }
+  }
+  console.log(nextFable);
+  return nextFable;
+}
+export {
+  fetchABunchOfUniqueRandomUnicorns,
+  fetchBestFables,
+  upvote,
+  getWholeFable,
+  getFables,
+  generateFable,
+  getNextFable,
+};
