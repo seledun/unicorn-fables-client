@@ -40,6 +40,10 @@ ol {
   flex-direction: column; /* Added to stack children vertically */
   align-items: flex-start; /* Align children to the left */
 }
+.fable-list-container h3 {
+  font-size: medium;
+  font-style: normal;
+}
 
 h1 {
   padding-top: 20px;
