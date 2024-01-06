@@ -24,9 +24,9 @@ ul {
 }
 
 .fable-list-container {
-  width: 80%;
-  height: 80%;
-  background-image: url(/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/fable-background.jpg);
+  width: 75%;
+  height: 75%;
+  background-image: url(fable-background.jpg);
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;

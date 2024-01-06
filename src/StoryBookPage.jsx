@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getFables } from "./utility/api";
+import { fetchBestFables } from "./utility/api";
 import "./storybook.css"; // Relative path to the CSS file
 
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
@@ -17,7 +17,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   }
 
   useEffect(() => {
-    getFables().then((data) => {
+    fetchBestFables(4).then((data) => {
       console.log("Got some datur", data);
       setAllFables(data);
     });

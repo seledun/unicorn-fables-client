@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { generateFable } from "../../utility/api.js";
 import "./style.css";
 
 function Popup({
@@ -67,7 +68,10 @@ function Popup({
           <Modal.Footer>
             <div className="footer-content">
               {" "}
-              <Button variant="generate" onClick={(e) => generateFable()}>
+              <Button
+                variant="generate"
+                onClick={(e) => generateFable(bgImage, id)}
+              >
                 Generera fabel
               </Button>
             </div>
