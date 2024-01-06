@@ -5,6 +5,7 @@ import "./App.css";
 import MapPage from "./MapPage.jsx";
 import StoryBookPage from "./StoryBookPage.jsx";
 import React from "react";
+import {Spotify, spotifySearch} from "./spotify_api.jsx";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -19,8 +20,12 @@ function App() {
   }, []);
 
   //Hanterar "start-screen" innan man kommer in till main app.
-  function handleClick() {
+  async function handleClick() {
     setStart(true);
+    console.log("HEEEj");
+    let token = await Spotify();
+    spotifySearch(token, "unicorn");
+
   }
 
   if (!start) {
