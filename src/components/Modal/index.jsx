@@ -2,10 +2,20 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./style.css";
 
-function Popup({ handleClose, show, selectedUnicorn, storyParameters }) {
+function Popup({
+  handleClose,
+  show,
+  selectedUnicorn,
+  storyParameters,
+  setCurrentPage,
+  setSelectedFable,
+}) {
   const { name, description, image, id } = selectedUnicorn;
   const { bgImage } = storyParameters;
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
+
+  console.log(setSelectedFable);
+  console.log(setCurrentPage);
 
   //Generar en ny fabel
   async function generateFable() {
@@ -31,7 +41,8 @@ function Popup({ handleClose, show, selectedUnicorn, storyParameters }) {
     const response = await fetch(baseURL + "fables", options);
     const fabel = await response.json();
 
-    console.log(fabel);
+    setCurrentPage("storybook");
+    setSelectedFable(fabel.uuid);
 
     return fabel;
   }
