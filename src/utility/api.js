@@ -170,12 +170,15 @@ async function getNextFable(id) {
 
   for (let i = 0; i < fables.length; i++) {
     currFable = fables[i];
+    if (i == fables.length - 1) {
+      break;
+    }
     if (currFable.id == id) {
       nextFable = fables[i + 1];
       break;
     }
   }
-  return nextFable;
+  return await nextFable;
 }
 export {
   fetchABunchOfUniqueRandomUnicorns,

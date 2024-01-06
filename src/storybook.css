@@ -84,3 +84,10 @@ section {
   max-width: 50%;
   padding-top: 1%;
 }
+
+.next-button {
+  position: absolute;
+  top: 200px; /* Adjust the top position as needed */
+  right: 400px; /* Adjust the right position as needed */
+  /* Add any other styles as needed */
+}

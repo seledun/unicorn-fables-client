@@ -5,11 +5,9 @@ import "./storybook.css"; // Relative path to the CSS file
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
-  const [individualFable, setIndividualFable] = useState([]);
   const [allFables, setAllFables] = useState([]);
-
   const [fableSelected, setFableSelected] = useState(false);
-  const [selectedFable, setSelectedFable] = useState([]);
+  const [selectedFable, setSelectedFable] = useState({});
 
   if (selectedFableId !== -1 && !fableSelected) {
     getWholeFable(selectedFableId);
@@ -18,7 +16,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
 
   useEffect(() => {
     fetchBestFables(10).then((data) => {
-      console.log("Got some datur", data);
+      console.log("Got some data", data);
       setAllFables(data);
     });
   }, []);
@@ -32,7 +30,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     let response = await fetch(baseURL + "fables/" + id, options);
     const fabel = await response.json();
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       setSelectedFable(fabel);
       setFableSelected(true);
     }
@@ -40,47 +38,42 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     console.log(fabel);
   }
 
-  console.log("ALL", allFables);
-  return (
-    <>
-      <div className="wrapper">
-        <div className="fable-list-container">
-          {fableSelected ? (
-            <>
-              <h1 className="selected-fable-name">{selectedFable.name}</h1>
-              <div className="fable-text">
-                <section>{selectedFable.text}</section>
-                <button
-                  onClick={() => getNextFable(selectedFable.uuid)}
-                  className="next-button"
-                >
-                  Nästa
-                </button>
+  async function handleNextFable() {
+    let nextFable = await getNextFable(selectedFable.id);
+    console.log(nextFable.id);
+    setSelectedFable(nextFable);
+  }
 
-                <button className="vote-button">Rösta</button>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="list-container">
-                <ol>
-                  <h1>Fabelregister</h1>
-                  {allFables.map((fable) => {
-                    return (
-                      <li key={fable.id}>
-                        <button onClick={() => getWholeFable(fable.id)}>
-                          <h3>{fable.name}</h3>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            </>
-          )}
-        </div>
+  return (
+    <div className="wrapper">
+      <div className="fable-list-container">
+        {fableSelected ? (
+          <>
+            <h1 className="selected-fable-name">{selectedFable.name}</h1>
+            <div className="fable-text">
+              <section>{selectedFable.text}</section>
+              <button onClick={handleNextFable} className="next-button">
+                Nästa
+              </button>
+              <button className="vote-button">Rösta</button>
+            </div>
+          </>
+        ) : (
+          <div className="list-container">
+            <ol>
+              <h1>Fabelregister</h1>
+              {allFables.map((fable) => (
+                <li key={fable.id}>
+                  <button onClick={() => getWholeFable(fable.id)}>
+                    <h3>{fable.name}</h3>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
