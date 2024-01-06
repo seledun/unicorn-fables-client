@@ -4,6 +4,14 @@ html {
   padding: 0;
   height: 100%;
 }
+@font-face {
+  font-family: "story-font";
+  src: url("./fonts/GoudyBookletter1911-Regular.ttf") format("truetype"),
+    url("./fonts/GoudyBookletter1911-Regular.woff") format("woff"),
+    url("./fonts/GoudyBookletter1911-Regular.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
 
 .wrapper {
   position: fixed;
@@ -16,78 +24,116 @@ html {
   align-items: center;
   background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
   background-size: cover;
+  padding-top: 40px;
 }
+
 .fable-list-container button {
   background-color: transparent;
-  border: none;
-  border: 1px solid black;
 }
 
 ol {
   background-color: none;
   float: left;
-  font-family: cursive;
+  font-family: "story-font";
+  border: none;
 }
 
 .fable-list-container {
-  width: 75%;
-  height: 75%;
+  width: 160vh;
+  height: 89vh;
   background-image: url(fable-background.jpg);
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;
   display: flex;
-  flex-direction: column; /* Added to stack children vertically */
-  align-items: flex-start; /* Align children to the left */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 55px;
 }
+
 .fable-list-container h3 {
   font-size: medium;
-  font-style: normal;
+  color: black;
 }
 
 h1 {
   padding-top: 20px;
-  padding-left: 50px;
-  font-size: small;
   padding-bottom: 1px;
-  font-family: cursive;
+  font-family: "story-font";
+  text-align: center;
 }
 
 .selected-fable-name {
   font-size: x-large;
-  text-decoration: underline;
+  text-decoration: none;
   color: rgb(10, 64, 26);
 }
+
 .fable-list-container > ul {
   padding-left: 10%;
   padding-top: 10%;
 }
+
 .fable-list-container h3 {
   font-size: large;
   text-decoration: none;
+  border: none;
 }
 
 li {
-  padding: 1%;
+  padding: 2%;
 }
 
 .fable-text {
-  text-align: left; /* Align text to the left side */
-  width: 100%; /* Take the full width of the container */
-  white-space: normal; /* Allow text to wrap onto the next line */
+  padding-top: 5px;
+  text-align: center;
+  max-width: 57%;
+  white-space: normal;
   font-size: small;
-  padding-left: 50px;
-  animation: forwards;
-}
-
-section {
-  max-width: 50%;
-  padding-top: 1%;
+  animation: fade-in 4s forwards;
+  font-family: "story-font";
+  border: 1px solid black;
+  padding: 20px;
 }
 
 .next-button {
   position: absolute;
-  top: 200px; /* Adjust the top position as needed */
-  right: 400px; /* Adjust the right position as needed */
-  /* Add any other styles as needed */
+  top: 200px;
+  right: 470px;
+}
+
+.vote-button {
+  position: absolute;
+  top: 200px;
+  right: 400px;
+}
+
+.song-button {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+}
+
+.list-container {
+  margin-left: 120px;
+  border: 1px solid black;
+}
+
+.list-container button {
+  border: none;
+}
+
+.next-button,
+.vote-button,
+.song-button {
+  border: 1px solid black;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

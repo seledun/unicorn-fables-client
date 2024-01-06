@@ -21,7 +21,6 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     });
   }, []);
 
-  //GET för individuell fabel när man klickar i listan
   async function getWholeFable(id) {
     const options = {
       method: "GET",
@@ -49,19 +48,20 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
       <div className="fable-list-container">
         {fableSelected ? (
           <>
-            <h1 className="selected-fable-name">{selectedFable.name}</h1>
             <div className="fable-text">
+              <h1 className="selected-fable-name">{selectedFable.name}</h1>
               <section>{selectedFable.text}</section>
               <button onClick={handleNextFable} className="next-button">
                 Nästa
               </button>
               <button className="vote-button">Rösta</button>
+              <button className="song-button">sång knapp</button>
             </div>
           </>
         ) : (
           <div className="list-container">
+            <h1>Fabelregister</h1>
             <ol>
-              <h1>Fabelregister</h1>
               {allFables.map((fable) => (
                 <li key={fable.id}>
                   <button onClick={() => getWholeFable(fable.id)}>
