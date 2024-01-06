@@ -27,6 +27,9 @@ async function listUnicorns() {
 
 //Hämtar N slumpade enhörningar
 async function fetchABunchOfUniqueRandomUnicorns(range) {
+
+  console.log("Fetching " + range + " unicorns");
+
   const options = {
     method: "GET",
     headers: {
@@ -42,8 +45,13 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     idList.push(unicorns[i].id);
   }
 
+  console.log(idList.length)
+
   for (let i = 0; i < range; i++) {
-    if(idList.length == 0) {break;}
+    if(idList.length == 0) {
+      console.log("No more unicorns to fetch");
+      break;
+    }
 
     let randomId = Math.floor(Math.random() * idList.length);
     // Genererar ett slumpmässigt index
@@ -51,12 +59,14 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     idList.splice(randomId, 1);
     let response = await fetch(baseURL + "unicorns/" + id, options);
 
-    if (response.get('description') <= 40) {
-      range--;
+    let unicorn = await response.json();
+
+    if (unicorn.description.length <= 40) {
+      i--;
       continue;
     }
 
-    let unicorn = await response.json();
+    console.log(unicorn)
     unicornList.push(unicorn);
   }
 
