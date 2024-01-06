@@ -31,11 +31,12 @@ function ForestMap({
       <label className="switch-button">
         <input
           type="checkbox"
+          class="toggle"
           onChange={toggleBackground}
           checked={bgImage === 2}
         />
         <span className="slider round"></span>
-        Toggle Background
+      
       </label>
 
       <div
