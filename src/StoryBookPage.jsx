@@ -51,7 +51,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
               <div className="fable-text">
                 <section>{selectedFable.text}</section>
                 <button
-                  onClick={() => getNextFable(selectedFable.id)}
+                  onClick={() => getNextFable(selectedFable.uuid)}
                   className="next-button"
                 >
                   Nästa
@@ -59,8 +59,6 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
 
                 <button className="vote-button">Rösta</button>
               </div>
-              <button className="next-button">Nästa fabel</button>
-              <button className="vote-button">Rösta</button>
             </>
           ) : (
             <>

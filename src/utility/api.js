@@ -166,15 +166,15 @@ async function getWholeFable(id) {
 async function getNextFable(id) {
   const fables = await getFables();
   let nextFable = fables[0];
+  let currFable = fables[0];
 
   for (let i = 0; i < fables.length; i++) {
-    if (fables[i].id == id) {
-      console.log("Found yay");
+    currFable = fables[i];
+    if (currFable.id == id) {
       nextFable = fables[i + 1];
       break;
     }
   }
-  console.log(nextFable);
   return nextFable;
 }
 export {
