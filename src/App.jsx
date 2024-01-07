@@ -22,7 +22,6 @@ function App() {
   //Hanterar "start-screen" innan man kommer in till main app.
   async function handleClick() {
     setStart(true);
-
   }
 
   if (!start) {
