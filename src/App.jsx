@@ -22,9 +22,6 @@ function App() {
   //Hanterar "start-screen" innan man kommer in till main app.
   async function handleClick() {
     setStart(true);
-    console.log("HEEEj");
-    let token = await Spotify();
-    spotifySearch(token, "unicorn");
 
   }
 
