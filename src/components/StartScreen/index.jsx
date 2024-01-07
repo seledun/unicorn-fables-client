@@ -6,10 +6,10 @@ function StartScreen({ handleClick }) {
     <div className="app-container">
       <div className="startscreen-blob">
         <div className="fade-in-text">
-          <h1>Welcome to UnicornJourney!</h1>
+          <h1>Välkommen till UnicornFables</h1>
         </div>
         <button className="start-button" onClick={handleClick}>
-          Start your journey here...<span className="arrow"></span>
+          Börja ditt äventyr här...<span className="arrow"></span>
         </button>
       </div>
     </div>

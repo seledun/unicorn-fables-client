@@ -19,8 +19,3 @@
   display: flex;
   align-items: center;
 }
-
-.custom-modal {
-  background-image: url("/Users/hannahlindback/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png");
-  background-size: cover;
-}

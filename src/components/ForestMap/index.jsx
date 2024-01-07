@@ -3,7 +3,19 @@ import Popup from "../Modal";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
-function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
+function ForestMap({
+  randomUnicorns,
+  selectedUnicorn,
+  setSelectedUnicorn,
+  setCurrentPage,
+  setSelectedFable,
+}) {
+  console.log("Forest Map");
+  console.log(setSelectedFable);
+
+  console.log("Current Page");
+  console.log(setCurrentPage);
+
   const [show, setShow] = useState(false);
   const [bgImage, setBgImage] = useState(1); // State to track background image
 
@@ -19,11 +31,12 @@ function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
       <label className="switch-button">
         <input
           type="checkbox"
+          class="toggle"
           onChange={toggleBackground}
           checked={bgImage === 2}
         />
         <span className="slider round"></span>
-        Toggle Background
+      
       </label>
 
       <div
@@ -83,6 +96,8 @@ function ForestMap({ randomUnicorns, selectedUnicorn, setSelectedUnicorn }) {
         show={show}
         selectedUnicorn={selectedUnicorn}
         storyParameters={bgImage}
+        setCurrentPage={setCurrentPage}
+        setSelectedFable={setSelectedFable}
       />
     </>
   );

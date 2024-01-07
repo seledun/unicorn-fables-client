@@ -12,6 +12,7 @@ function App() {
   const [randomUnicorns, setRandomUnicorns] = useState([]);
   const [selectedUnicorn, setSelectedUnicorn] = useState({});
   const [currentPage, setCurrentPage] = useState("map");
+  const [selectedFable, setSelectedFable] = useState(-1);
 
   useEffect(() => {
     fetchABunchOfUniqueRandomUnicorns(7).then((unicorns) => {
@@ -44,9 +45,14 @@ function App() {
             randomUnicorns={randomUnicorns}
             selectedUnicorn={selectedUnicorn}
             setSelectedUnicorn={setSelectedUnicorn}
+            setCurrentPage={setCurrentPage}
+            setSelectedFable={setSelectedFable}
           />
         ) : (
-          <StoryBookPage />
+          <StoryBookPage
+            selectedFableId={selectedFable}
+            setSelectedFableId={setSelectedFable}
+          />
         )}
       </main>
     </div>

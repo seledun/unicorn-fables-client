@@ -27,6 +27,8 @@ async function listUnicorns() {
 
 //Hämtar N slumpade enhörningar
 async function fetchABunchOfUniqueRandomUnicorns(range) {
+  console.log("Fetching " + range + " unicorns");
+
   const options = {
     method: "GET",
     headers: {
@@ -42,14 +44,28 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     idList.push(unicorns[i].id);
   }
 
-  for (let i = 0; i < range; i++) {
-    let randomId = Math.floor(Math.random() * idList.length);
+  console.log(idList.length);
 
+  for (let i = 0; i < range; i++) {
+    if (idList.length == 0) {
+      console.log("No more unicorns to fetch");
+      break;
+    }
+
+    let randomId = Math.floor(Math.random() * idList.length);
     // Genererar ett slumpmässigt index
     let id = idList[randomId];
     idList.splice(randomId, 1);
     let response = await fetch(baseURL + "unicorns/" + id, options);
+
     let unicorn = await response.json();
+
+    if (unicorn.description.length <= 40) {
+      i--;
+      continue;
+    }
+
+    console.log(unicorn);
     unicornList.push(unicorn);
   }
 
@@ -58,7 +74,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
 
 //Rankar upp en fable
 async function upvote(id) {
-  const options  = {
+  const options = {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -109,7 +125,7 @@ async function fetchBestFables(range) {
   const sortedFables = sortFablesByRank(fables); //Sort
 
   for (let i = 0; i < range; i++) {
-    if(i >= sortedFables.length) {
+    if (i >= sortedFables.length) {
       break;
     }
     fableList.push(sortedFables[i]);
@@ -123,7 +139,7 @@ function sortFablesByRank(fables) {
   for (let i = 0; i < sortedArray.length; i++) {
     let highestVotedFableIndex = i;
     let highestFableVote = sortedArray[i].votes;
-    for(let j = i+1; j < sortedArray.length; j++) {
+    for (let j = i + 1; j < sortedArray.length; j++) {
       if (sortedArray[j].votes > highestFableVote) {
         highestVotedFableIndex = j;
         highestFableVote = sortedArray[j].votes;
@@ -132,7 +148,6 @@ function sortFablesByRank(fables) {
     let temp = sortedArray[i];
     sortedArray[i] = fables[highestVotedFableIndex];
     sortedArray[highestVotedFableIndex] = temp;
-    console.log(sortedArray[i]);
   }
   return sortedArray;
 }
@@ -148,4 +163,29 @@ async function getWholeFable(id) {
   return fabel;
 }
 
-export { fetchABunchOfUniqueRandomUnicorns, fetchBestFables, upvote, getWholeFable, getFables, generateFable };
+async function getNextFable(id) {
+  const fables = await getFables();
+  let nextFable = fables[0];
+  let currFable = fables[0];
+
+  for (let i = 0; i < fables.length; i++) {
+    currFable = fables[i];
+    if (i == fables.length - 1) {
+      break;
+    }
+    if (currFable.id == id) {
+      nextFable = fables[i + 1];
+      break;
+    }
+  }
+  return await nextFable;
+}
+export {
+  fetchABunchOfUniqueRandomUnicorns,
+  fetchBestFables,
+  upvote,
+  getWholeFable,
+  getFables,
+  generateFable,
+  getNextFable,
+};

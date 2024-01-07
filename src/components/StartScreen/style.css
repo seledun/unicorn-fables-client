@@ -26,8 +26,8 @@ html {
 }
 
 .fade-in-text {
-  font-family: Arial;
-  font-size: 150px;
+  font-family: cursive;
+  font-size: x-large;
   animation: fadeIn 5s;
 }
 
@@ -62,7 +62,8 @@ html {
   font-weight: bold;
   cursor: pointer;
   align-items: center;
-  font-size: 14px;
+  font-size: medium;
+  font-family: cursive;
 }
 
 .start-button > .arrow {
@@ -73,7 +74,7 @@ html {
   position: relative;
   transform: rotate(-45deg);
   margin: 0 6px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .start-button > .arrow::before {
@@ -97,7 +98,7 @@ html {
 
 .start-button:hover > .arrow::before {
   opacity: 1;
-  width: 8px;
+  width: 10px;
 }
 
 .start-button:hover {
