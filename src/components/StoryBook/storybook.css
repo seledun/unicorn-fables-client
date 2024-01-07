@@ -141,7 +141,7 @@ li {
   top: 150px;
   right: 130px;
   padding: 10px 40px; /* Justera padding beroende på behov */
-  background-image: url(src/Spotify_Icon_RGB_Green.png); /* spotify icon-png */
+  background-image: url(src/Spotify_Icon_RGB_Black.png); /* spotify icon-png */
   background-size: contain; /* Justera beroende på behov (cover, contain, etc.) */
   background-repeat: no-repeat;
   background-position: center;
@@ -156,10 +156,10 @@ li {
   top: 80px;
   right: 450px;
   cursor: pointer;
-  margin: 100px 0 0 100px;
+  margin: 75px 0 0 100px;
   width: 100px;
   height: 100px;
-  border: solid 3px #999;
+  border: solid 3px #000000;
   border-radius: 100%;
   z-index: 1;
   transition: all 0.2s linear;
@@ -171,7 +171,7 @@ li {
     height: 10%;
     top: 41%;
     left: 55%;
-    background: #999;
+    background: #293124;
     z-index: 2;
     transform: translate(-50%, -50%) rotate(45deg);
     transition: all 0.2s linear;
