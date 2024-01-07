@@ -68,12 +68,15 @@ function Popup({
           <Modal.Footer>
             <div className="footer-content">
               {" "}
+              <div className="modal-button">
               <Button
                 variant="generate"
                 onClick={(e) => generateFable(bgImage, id)}
+          
               >
                 Generera fabel
               </Button>
+              </div>
             </div>
           </Modal.Footer>
         </Modal>
