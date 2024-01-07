@@ -38,8 +38,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   }
 
   async function handleNextFable() {
-    let nextFable = await getNextFable(selectedFable.id);
-    console.log(nextFable.id);
+    let nextFable = await getNextFable(selectedFable.uuid);
     setSelectedFable(nextFable);
   }
 

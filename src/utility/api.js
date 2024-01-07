@@ -178,7 +178,9 @@ async function getNextFable(id) {
       break;
     }
   }
-  return await nextFable;
+
+  const responseFable = await fetch(baseURL + "fables/" + nextFable.id);
+  return await responseFable.json();
 }
 export {
   fetchABunchOfUniqueRandomUnicorns,
