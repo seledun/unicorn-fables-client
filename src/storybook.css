@@ -75,14 +75,14 @@ li {
 }
 
 .fable-text {
-  padding-top: 5px;
+  padding-top: 0px;
   text-align: center;
   max-width: 57%;
   white-space: normal;
   font-size: smaller;
   animation: fade-in 4s forwards;
   border: 1px solid rgba(0, 0, 0, 0.251);
-  padding: 20px;
+  padding: 10px;
   font-family: cursive;
 }
 
@@ -131,18 +131,59 @@ li {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 200px;
-  right: 220px;
+  right: 240px;
   border: none;
 }
 
 .song-button {
   position: absolute;
   top: 150px;
-  right: 120px;
+  right: 130px;
 }
 
 .next-button {
   position: absolute;
-  top: 150px;
-  right: 470px;
+  top: 80px;
+  right: 450px;
+  cursor: pointer;
+  margin: 100px 0 0 100px;
+  width: 50px;
+  height: 50px;
+  border: solid 3px #999;
+  border-radius: 100%;
+  z-index: 1;
+  transition: all 0.2s linear;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 10%;
+    top: 41%;
+    left: 55%;
+    background: #999;
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.2s linear;
+  }
+  &:after {
+    z-index: 3;
+    top: 59%;
+    left: 55%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &:hover {
+    border: solid 8px #777;
+    &:after,
+    &:before {
+      background: #777;
+    }
+  }
+  &:active {
+    border: solid 8px #111;
+    &:after,
+    &:before {
+      background: #111;
+    }
+  }
 }

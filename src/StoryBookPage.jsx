@@ -58,9 +58,10 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
               <h1 className="selected-fable-name">{selectedFable.name}</h1>
               <section>{selectedFable.text}</section>
               <div className="button-container">
-                <button onClick={handleNextFable} className="next-button">
-                  Nästa
-                </button>
+                <button
+                  onClick={handleNextFable}
+                  className="next-button"
+                ></button>
                 <button onClick={handleVote} className="placement">
                   <div
                     className={`heart ${isHeartActive ? "is-active" : ""}`}
@@ -72,7 +73,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
                   }
                   className="song-button"
                 >
-                  sång knapp
+                  sångbutton
                 </button>
               </div>
             </div>
