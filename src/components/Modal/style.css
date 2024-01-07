@@ -1,7 +1,17 @@
+/* Box for the whole pop-up-module*/
+.modal-content{
+  margin-top: 30%;
+}
+
+
+/*Style for modal body*/
 .popup-body {
   display: flex;
   flex-wrap: wrap;
+  background-image:url(/Users/simone/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png) ;
+
 }
+
 
 .text {
   flex: 1; /* Take up remaining space */
@@ -15,7 +25,27 @@
   align-items: center; /* Center image vertically */
 }
 
+/* Style for modal footer*/
 .modal-footer {
   display: flex;
   align-items: center;
+  background-image: url(/Users/simone/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png) !important;
+
 }
+
+
+/* Style for modals header */
+.modal-header {
+  background-image:url(/Users/simone/Documents/GitHub/unicorn-fables-client/src/components/StartScreen/old-scroll-picture.png) ;
+
+}
+
+/* Style for modal header-text */
+.modal-title.h4 {
+  color: #000;
+  font-family: cursive;
+  font-size:xx-large;
+}
+
+
+

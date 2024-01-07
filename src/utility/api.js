@@ -20,7 +20,7 @@ async function listUnicorns() {
     },
   };
   const response = await fetch(baseURL + "unicorns", options);
-  const unicorns = JSON.parse(await response.json());
+  const unicorns = await response.json();
 
   return unicorns;
 }
