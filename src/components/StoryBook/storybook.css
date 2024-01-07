@@ -31,7 +31,7 @@ ol {
 .fable-list-container {
   width: 160vh;
   height: 89vh;
-  background-image: url(fable-background.jpg);
+  background-image: url(src/fable-background.jpg);
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 8px 8px rgb(30, 23, 18) inset;

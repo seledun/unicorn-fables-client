@@ -3,7 +3,7 @@ import StartScreen from "./components/StartScreen/index.jsx";
 import { getFables, fetchABunchOfUniqueRandomUnicorns } from "./utility/api.js";
 import "./App.css";
 import MapPage from "./MapPage.jsx";
-import StoryBookPage from "./StoryBookPage.jsx";
+import StoryBookPage from "./components/StoryBook/StoryBookPage.jsx";
 import React from "react";
 
 function App() {

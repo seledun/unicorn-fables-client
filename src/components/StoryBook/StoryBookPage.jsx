@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchBestFables, getNextFable, upvote } from "./utility/api";
+import { fetchBestFables, getNextFable, upvote } from "../../utility/api";
 import "./storybook.css"; // Ensure the path to your CSS file is correct
 
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
