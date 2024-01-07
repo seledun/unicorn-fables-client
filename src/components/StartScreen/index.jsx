@@ -1,6 +1,7 @@
 import React from "react";
-import "./style.css"; // Relative path to the CSS file
+import "./style.css";
 
+//Renders startscreen, button brings user to map-page
 function StartScreen({ handleClick }) {
   return (
     <div className="app-container">

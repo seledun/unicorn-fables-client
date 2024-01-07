@@ -10,12 +10,6 @@ function ForestMap({
   setCurrentPage,
   setSelectedFable,
 }) {
-  console.log("Forest Map");
-  console.log(setSelectedFable);
-
-  console.log("Current Page");
-  console.log(setCurrentPage);
-
   const [show, setShow] = useState(false);
   const [bgImage, setBgImage] = useState(1); // State to track background image
 
@@ -31,12 +25,11 @@ function ForestMap({
       <label className="switch-button">
         <input
           type="checkbox"
-          class="toggle"
+          className="toggle"
           onChange={toggleBackground}
           checked={bgImage === 2}
         />
         <span className="slider round"></span>
-      
       </label>
 
       <div

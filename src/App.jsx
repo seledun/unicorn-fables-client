@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import StartScreen from "./components/StartScreen/index.jsx";
-import { getFables, fetchABunchOfUniqueRandomUnicorns } from "./utility/api.js";
+import { fetchABunchOfUniqueRandomUnicorns } from "./utility/api.js";
 import "./App.css";
 import MapPage from "./MapPage.jsx";
 import StoryBookPage from "./components/StoryBook/StoryBookPage.jsx";

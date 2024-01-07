@@ -1,6 +1,6 @@
 const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
-// Hämtar sparade fabler
+// Fetches saved fables
 async function getFables() {
   try {
     const response = await fetch(baseURL + "fables");
@@ -27,8 +27,6 @@ async function listUnicorns() {
 
 //Hämtar N slumpade enhörningar
 async function fetchABunchOfUniqueRandomUnicorns(range) {
-  console.log("Fetching " + range + " unicorns");
-
   const options = {
     method: "GET",
     headers: {
@@ -44,11 +42,8 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     idList.push(unicorns[i].id);
   }
 
-  console.log(idList.length);
-
   for (let i = 0; i < range; i++) {
     if (idList.length == 0) {
-      console.log("No more unicorns to fetch");
       break;
     }
 
@@ -65,7 +60,6 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
       continue;
     }
 
-    console.log(unicorn);
     unicornList.push(unicorn);
   }
 
@@ -106,8 +100,6 @@ async function generateFable(bgImage, id) {
 
   const response = await fetch(baseURL + "fables", options);
   const fabel = await response.json();
-
-  console.log(fabel);
 
   return fabel;
 }

@@ -18,10 +18,7 @@ function Popup({
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
   const [loading, setLoading] = useState(false);
 
-  console.log(setSelectedFable);
-  console.log(setCurrentPage);
-
-  //Generar en ny fabel
+  //Generates a new fable
   async function generateFable() {
     setLoading(true);
     let mood = "";

@@ -17,7 +17,6 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
 
   useEffect(() => {
     fetchBestFables(10).then((data) => {
-      console.log("Got some data", data);
       setAllFables(data);
     });
   }, []);
@@ -34,8 +33,6 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
       setSelectedFable(fabel);
       setFableSelected(true);
     }
-
-    console.log(fabel);
   }
 
   async function handleNextFable() {
