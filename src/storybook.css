@@ -4,15 +4,6 @@ html {
   padding: 0;
   height: 100%;
 }
-@font-face {
-  font-family: "story-font";
-  src: url("./fonts/GoudyBookletter1911-Regular.ttf") format("truetype"),
-    url("./fonts/GoudyBookletter1911-Regular.woff") format("woff"),
-    url("./fonts/GoudyBookletter1911-Regular.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-
 .wrapper {
   position: fixed;
   top: 0;
@@ -34,7 +25,6 @@ html {
 ol {
   background-color: none;
   float: left;
-  font-family: "story-font";
   border: none;
 }
 
@@ -59,7 +49,6 @@ ol {
 h1 {
   padding-top: 20px;
   padding-bottom: 1px;
-  font-family: "story-font";
   text-align: center;
 }
 
@@ -67,6 +56,7 @@ h1 {
   font-size: x-large;
   text-decoration: none;
   color: rgb(10, 64, 26);
+  font-family: cursive;
 }
 
 .fable-list-container > ul {
@@ -89,29 +79,11 @@ li {
   text-align: center;
   max-width: 57%;
   white-space: normal;
-  font-size: small;
+  font-size: smaller;
   animation: fade-in 4s forwards;
-  font-family: "story-font";
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.251);
   padding: 20px;
-}
-
-.next-button {
-  position: absolute;
-  top: 200px;
-  right: 470px;
-}
-
-.vote-button {
-  position: absolute;
-  top: 200px;
-  right: 400px;
-}
-
-.song-button {
-  position: absolute;
-  top: 200px;
-  right: 300px;
+  font-family: cursive;
 }
 
 .list-container {
@@ -124,9 +96,11 @@ li {
 }
 
 .next-button,
-.vote-button,
 .song-button {
   border: 1px solid black;
+  font-family: "Courier New", Courier, monospace;
+  width: 100px;
+  height: 100px;
 }
 
 @keyframes fade-in {
@@ -136,4 +110,39 @@ li {
   to {
     opacity: 1;
   }
+}
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png")
+    no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+
+  &.is-active {
+    transition-duration: 1s;
+    background-position: -2800px 0;
+  }
+}
+
+.placement {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 200px;
+  right: 220px;
+  border: 1px solid black;
+}
+
+.song-button {
+  position: absolute;
+  top: 150px;
+  right: 120px;
+}
+
+.next-button {
+  position: absolute;
+  top: 150px;
+  right: 470px;
 }

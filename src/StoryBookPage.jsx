@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { fetchBestFables, getNextFable } from "./utility/api";
-import "./storybook.css"; // Relative path to the CSS file
+import "./storybook.css"; // Ensure the path to your CSS file is correct
 
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
@@ -8,6 +8,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   const [allFables, setAllFables] = useState([]);
   const [fableSelected, setFableSelected] = useState(false);
   const [selectedFable, setSelectedFable] = useState({});
+  const [isHeartActive, setHeartActive] = useState(false);
 
   if (selectedFableId !== -1 && !fableSelected) {
     getWholeFable(selectedFableId);
@@ -42,6 +43,10 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     setSelectedFable(nextFable);
   }
 
+  const handleVote = () => {
+    setHeartActive((prevState) => !prevState);
+  };
+
   return (
     <div className="wrapper">
       <div className="fable-list-container">
@@ -50,11 +55,17 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
             <div className="fable-text">
               <h1 className="selected-fable-name">{selectedFable.name}</h1>
               <section>{selectedFable.text}</section>
-              <button onClick={handleNextFable} className="next-button">
-                Nästa
-              </button>
-              <button className="vote-button">Rösta</button>
-              <button className="song-button">sång knapp</button>
+              <div className="button-container">
+                <button onClick={handleNextFable} className="next-button">
+                  Nästa
+                </button>
+                <button onClick={handleVote} className="placement">
+                  <div
+                    className={`heart ${isHeartActive ? "is-active" : ""}`}
+                  ></div>
+                </button>
+                <button className="song-button">sång knapp</button>
+              </div>
             </div>
           </>
         ) : (
