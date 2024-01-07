@@ -6,6 +6,7 @@ import MapPage from "./MapPage.jsx";
 import StoryBookPage from "./components/StoryBook/StoryBookPage.jsx";
 import React from "react";
 
+//Renders Reactapp
 function App() {
   const [start, setStart] = useState(false);
   const [randomUnicorns, setRandomUnicorns] = useState([]);
@@ -19,7 +20,7 @@ function App() {
     });
   }, []);
 
-  //Hanterar "start-screen" innan man kommer in till main app.
+  //Handles startscreen and "routing"
   function handleClick() {
     setStart(true);
   }

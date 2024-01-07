@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { fetchBestFables, getNextFable, upvote } from "../../utility/api";
-import "./storybook.css"; // Ensure the path to your CSS file is correct
+import "./storybook.css";
 
+//Renders the fablebook; whole fables and list of fables
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
   const baseURL = "http://127.0.0.1:5000/0.0.1/";
 
@@ -14,13 +15,14 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     getWholeFable(selectedFableId);
     setSelectedFableId(-1);
   }
-
+  //Only shows the top 10 fables (with the most votes)
   useEffect(() => {
     fetchBestFables(10).then((data) => {
       setAllFables(data);
     });
   }, []);
 
+  //Function for fetching a whole fable
   async function getWholeFable(id) {
     const options = {
       method: "GET",
@@ -34,7 +36,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
       setFableSelected(true);
     }
   }
-
+  //Function for reading next fable in list when clicking next-button
   async function handleNextFable() {
     let nextFable = await getNextFable(selectedFable.uuid);
     setSelectedFable(nextFable);

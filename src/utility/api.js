@@ -11,7 +11,7 @@ async function getFables() {
   }
 }
 
-//Hämta och skapa en lista på alla enhörningar
+//Fetches and creates a list of all unicorns
 async function listUnicorns() {
   const options = {
     method: "GET",
@@ -25,7 +25,7 @@ async function listUnicorns() {
   return unicorns;
 }
 
-//Hämtar N slumpade enhörningar
+//Gets random unicorns
 async function fetchABunchOfUniqueRandomUnicorns(range) {
   const options = {
     method: "GET",
@@ -48,7 +48,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
     }
 
     let randomId = Math.floor(Math.random() * idList.length);
-    // Genererar ett slumpmässigt index
+    // Generates a random index
     let id = idList[randomId];
     idList.splice(randomId, 1);
     let response = await fetch(baseURL + "unicorns/" + id, options);
@@ -66,7 +66,7 @@ async function fetchABunchOfUniqueRandomUnicorns(range) {
   return unicornList;
 }
 
-//Rankar upp en fable
+//Upvotes a fable so it gets pushed higher up on the list
 async function upvote(id) {
   const options = {
     method: "PUT",
@@ -77,7 +77,7 @@ async function upvote(id) {
   await fetch(baseURL + "fables/" + id, options);
 }
 
-//Generar en ny fabel
+//Generates a new fable
 async function generateFable(bgImage, id) {
   let mood = "";
   if (bgImage == 1) {
@@ -104,6 +104,7 @@ async function generateFable(bgImage, id) {
   return fabel;
 }
 
+//Fectches the best fables from the list
 async function fetchBestFables(range) {
   const options = {
     method: "GET",
@@ -125,6 +126,7 @@ async function fetchBestFables(range) {
   return fableList;
 }
 
+//Function to sort fables by how much upvotes they have
 function sortFablesByRank(fables) {
   const sortedArray = fables;
 
@@ -144,6 +146,7 @@ function sortFablesByRank(fables) {
   return sortedArray;
 }
 
+//Function to get whole fable
 async function getWholeFable(id) {
   const options = {
     method: "GET",
@@ -155,6 +158,7 @@ async function getWholeFable(id) {
   return fabel;
 }
 
+//Fetches next fable in list
 async function getNextFable(id) {
   const fables = await getFables();
   let nextFable = fables[0];

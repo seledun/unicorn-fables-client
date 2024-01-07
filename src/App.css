@@ -9,18 +9,17 @@
 }
 
 aside {
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center children horizontally */
-  align-items: center; /* Center children vertically */
-  width: 100%; /* Set width to 100% */
-  position: fixed; /* Position the navbar at the top */
-  top: 0; /* Position the navbar at the top */
-  background-color: rgba(0, 0, 0, 0.554); /* Optional: Add background color */
-  z-index: 1000; /* Optional: Set z-index for stacking context */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.554);
+  z-index: 1000;
   height: 8%;
 }
 
 aside button {
-  /* Additional button styles if needed */
-  margin: 10px; /* Optional: Add some spacing between buttons */
+  margin: 10px;
 }

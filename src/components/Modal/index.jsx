@@ -5,6 +5,7 @@ import "./style.css";
 import { useState } from "react";
 import { Spinner } from "react-bootstrap";
 
+//Main function for rendering Pop-up Modal from Bootstrap
 function Popup({
   handleClose,
   show,

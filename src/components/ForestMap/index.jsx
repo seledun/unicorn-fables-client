@@ -3,6 +3,7 @@ import Popup from "../Modal";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
+//Main function for rendering Forest Map Page
 function ForestMap({
   randomUnicorns,
   selectedUnicorn,

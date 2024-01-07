@@ -2,7 +2,7 @@
   position: relative;
   background-image: url("https://png.pngtree.com/background/20230616/original/pngtree-fairy-forest-in-hd-desktop-wallpaper-picture-image_3627866.jpg");
   background-size: cover;
-  width: 100vw; /* Set width to 100% of the viewport width */
+  width: 100vw;
   height: 100vh;
 }
 
@@ -183,7 +183,6 @@ path {
   top: 323px;
 }
 
-/*Toggle-button that switch between dark and lightmood*/
 .switch-button {
   position: fixed;
   top: 100px;
@@ -194,7 +193,7 @@ path {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  z-index: 9999; /* Make sure it's on top */
+  z-index: 9999;
   transition: background-color 0.3s ease;
 }
 
@@ -202,7 +201,6 @@ path {
   background-color: #555;
 }
 
-/* Style for night mode (active state) */
 .switch-button.active {
   background-color: #111;
 }
@@ -241,9 +239,9 @@ path {
   text-indent: -32px;
   word-spacing: 50px;
   color: #fff;
-  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
 }
 
