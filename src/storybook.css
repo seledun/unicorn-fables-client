@@ -132,7 +132,7 @@ li {
   transform: translate(-50%, -50%);
   top: 200px;
   right: 220px;
-  border: 1px solid black;
+  border: none;
 }
 
 .song-button {

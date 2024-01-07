@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchBestFables, getNextFable } from "./utility/api";
+import { fetchBestFables, getNextFable, upvote } from "./utility/api";
 import "./storybook.css"; // Ensure the path to your CSS file is correct
 
 function StoryBookPage({ selectedFableId, setSelectedFableId }) {
@@ -43,8 +43,10 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
     setSelectedFable(nextFable);
   }
 
-  const handleVote = () => {
+  const handleVote = async () => {
     setHeartActive((prevState) => !prevState);
+
+    await upvote(selectedFable.uuid);
   };
 
   return (
@@ -64,7 +66,14 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
                     className={`heart ${isHeartActive ? "is-active" : ""}`}
                   ></div>
                 </button>
-                <button className="song-button">sång knapp</button>
+                <button
+                  onClick={() =>
+                    (window.location.href = selectedFable.spotify_url)
+                  }
+                  className="song-button"
+                >
+                  sång knapp
+                </button>
               </div>
             </div>
           </>
