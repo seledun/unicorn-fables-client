@@ -5,7 +5,6 @@ import "./App.css";
 import MapPage from "./MapPage.jsx";
 import StoryBookPage from "./StoryBookPage.jsx";
 import React from "react";
-import {Spotify, spotifySearch} from "./spotify_api.jsx";
 
 function App() {
   const [start, setStart] = useState(false);
