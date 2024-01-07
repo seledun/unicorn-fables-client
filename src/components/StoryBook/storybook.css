@@ -141,7 +141,7 @@ li {
   top: 150px;
   right: 130px;
   padding: 10px 40px; /* Justera padding beroende på behov */
-  background-image: url('/Users/simone/Documents/GitHub/unicorn-fables-client/src/Spotify_Icon_RGB_Green.png'); /* spotify icon-png */
+  background-image: url(src/Spotify_Icon_RGB_Green.png); /* spotify icon-png */
   background-size: contain; /* Justera beroende på behov (cover, contain, etc.) */
   background-repeat: no-repeat;
   background-position: center;
