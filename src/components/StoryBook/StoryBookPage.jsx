@@ -80,7 +80,7 @@ function StoryBookPage({ selectedFableId, setSelectedFableId }) {
           </>
         ) : (
           <div className="list-container">
-            <h1>Fabelregister</h1>
+            <h1>Fabelbok</h1>
             <ol>
               {allFables.map((fable) => (
                 <li key={fable.id}>

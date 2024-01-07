@@ -36,7 +36,7 @@ function App() {
     <div className="wrapper">
       <aside>
         <button onClick={() => setCurrentPage("map")}>Hem</button>
-        <button onClick={() => setCurrentPage("storybook")}>Storybook</button>
+        <button onClick={() => setCurrentPage("storybook")}>Fabelbok</button>
       </aside>
       <main>
         {currentPage === "map" ? (
