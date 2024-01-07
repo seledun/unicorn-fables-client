@@ -7,7 +7,7 @@
 .popup-body {
   display: flex;
   flex-wrap: wrap;
-  background-image: url("src/old-scroll-picture(1).jpg");
+  background-image: url("src/basic-arc-img.png");
 }
 
 .text {
@@ -26,12 +26,12 @@
 .modal-footer {
   display: flex;
   align-items: center;
-  background-image: url("src/old-scroll-picture(1).jpg") !important;
+  background-image: url("src/basic-arc-img.png") !important;
 }
 
 /* Style for modals header */
 .modal-header {
-  background-image: url("src/old-scroll-picture(1).jpg");
+  background-image: url("src/basic-arc-img.png");
 }
 
 /* Style for modal header-text */
@@ -39,4 +39,21 @@
   color: #000;
   font-family: cursive;
   font-size: xx-large;
+  text-align: center;
+}
+
+.spinner-border {
+  padding: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.loading-text {
+  font-family: cursive;
+}
+
+.loading-body {
+  align-items: center;
+  text-align: center;
+  background-image: url("src/basic-arc-img.png");
 }

@@ -92,7 +92,10 @@ function Popup({
               </Modal.Footer>
             </>
           ) : (
-            <Modal.Body className="popup-body">
+            <Modal.Body className="loading-body">
+              <h3 className="loading-text">
+                Fabel skrivs ... Var vänlig vänta
+              </h3>
               <Spinner animation="border" variant="success"></Spinner>
             </Modal.Body>
           )}
