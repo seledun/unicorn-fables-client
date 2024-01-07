@@ -52,3 +52,11 @@
   text-align: center;
   background-image: url("src/basic-arc-img.png");
 }
+
+.modal-button {
+  background-color: #13452d;
+  color: white;
+}
+.modal-button :hover {
+  color: white;
+}
