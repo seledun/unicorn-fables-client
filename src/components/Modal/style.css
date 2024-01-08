@@ -57,6 +57,7 @@
   background-color: #13452d;
   color: white;
 }
-.modal-button :hover {
+
+.btn {
   color: white;
 }
